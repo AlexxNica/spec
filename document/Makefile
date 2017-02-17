@@ -61,7 +61,8 @@ help:
 publish: all
 	rm -rf $(GHPAGESDIR)/*
 	cp -rf $(BUILDDIR)/html/* $(GHPAGESDIR)/
-	git add -A $(GHPAGESDIR)/*
+	#git add -A $(GHPAGESDIR)/*
+	git subtree push --prefix $(GHPAGESDIR) origin gh-pages
 
 .PHONY: all
 all:	pdf html
